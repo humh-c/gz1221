@@ -15,10 +15,16 @@
             android:theme="@style/Theme.Mygz.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".EquipmentPreheatingActivity"></activity>
+        <activity android:name=".StartBlowActivity"></activity>
+        <activity android:name=".BlowActivity"></activity>
+        <activity android:name=".BlowSucessActivity"></activity>
+        <activity android:name=".BlowFailActivity"></activity>
+        <activity android:name=".ResultDisplayActivity"></activity>
     </application>
 
 </manifest>

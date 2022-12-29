@@ -1,9 +1,14 @@
 package com.example.mygz;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -12,37 +17,60 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.mygz.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+
+//    private Button fab;
+//    private Button bt_Equipment_preheating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        Button fab = findViewById(R.id.button00);
+        Button func1 = findViewById(R.id.func1);
+        Button func2 = findViewById(R.id.func2);
+        Button func3 = findViewById(R.id.func3);
+        Button func4 = findViewById(R.id.func4);
 
-        setSupportActionBar(binding.toolbar);
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.this, "匿名内部内方式", Toast.LENGTH_SHORT).show();
+                System.out.println("这个是测试");
+                Log.i("mainactivity", "onClick: 点击了确认");
             }
         });
-    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+        func1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EquipmentPreheatingActivity.class);
+                startActivity(intent);
+            }
+        });
+        func2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EquipmentPreheatingActivity.class);
+                startActivity(intent);
+            }
+        });
+        func3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EquipmentPreheatingActivity.class);
+                startActivity(intent);
+            }
+        });
+        func4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EquipmentPreheatingActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
