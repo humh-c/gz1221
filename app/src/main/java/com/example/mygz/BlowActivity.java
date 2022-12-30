@@ -18,15 +18,6 @@ public class BlowActivity extends Activity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.blowactivity);
-//        try {
-//            Thread.sleep(2000);
-//            Intent intent = new Intent(BlowActivity.this,BlowSucessActivity.class);
-//            startActivity(intent);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//}
         new Handler().postDelayed(r, 2000);
 
     }
