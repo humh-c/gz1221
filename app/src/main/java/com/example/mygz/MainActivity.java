@@ -37,9 +37,7 @@ public class MainActivity extends Activity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "匿名内部内方式", Toast.LENGTH_SHORT).show();
-                System.out.println("这个是测试");
-                Log.i("mainactivity", "onClick: 点击了确认");
+                Toast.makeText(MainActivity.this, "这个是测试", Toast.LENGTH_SHORT).show();
             }
         });
 
