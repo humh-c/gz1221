@@ -29,9 +29,5 @@ public class ResultDisplayActivity extends Activity {
 
             }
         });
-
-
-//        Intent intent = new Intent(BlowSucessActivity.this,BlowSucessActivity.class);
-//        startActivity(intent);
     }
 }

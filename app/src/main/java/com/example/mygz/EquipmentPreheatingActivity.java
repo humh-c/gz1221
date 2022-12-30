@@ -3,6 +3,7 @@ package com.example.mygz;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,23 +18,16 @@ public class EquipmentPreheatingActivity extends Activity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.equipmentpreheatingactivity);
-        loding = findViewById(R.id.loding);
-
-        loding.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loding.setText("加载完成，马上开始检测");
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Intent intent = new Intent(EquipmentPreheatingActivity.this,StartBlowActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
+//        loding = findViewById(R.id.loding);
+        new Handler().postDelayed(r, 2000);
 
     }
+    Runnable r = new Runnable() {
+        @Override
+        public void run() {
+            Intent intent = new Intent(EquipmentPreheatingActivity.this,StartBlowActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    };
 }
